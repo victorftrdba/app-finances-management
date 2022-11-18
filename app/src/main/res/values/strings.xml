@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AtpDevMobileJava</string>
+    <string name="textview1">TextView1</string>
+    <string name="textview2">TextView2</string>
+    <string name="item">Item</string>
+    <string name="adicionar_finan_a">Adicionar finança</string>
+    <string name="valueTextView">Valor da conta</string>
+    <string name="nameTextView">Descrição da conta</string>
+    <string name="attention">Erro</string>
+    <string name="attention_description">Um erro ocorreu durante o salvamento dos dados, preencha corretamente os campos.</string>
+    <string name="remove_finance">Conta removida</string>
+    <string name="undo">Desfazer</string>
+</resources>
