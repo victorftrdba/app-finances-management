@@ -8,11 +8,11 @@
     <EditText
         android:id="@+id/nameTextView"
         android:layout_width="303dp"
-        android:layout_height="48dp"
+        android:layout_height="52dp"
         android:layout_marginStart="53dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="53dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/nameTextView"
@@ -27,7 +27,7 @@
     <EditText
         android:id="@+id/valueTextView"
         android:layout_width="304dp"
-        android:layout_height="48dp"
+        android:layout_height="52dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/valueTextView"
