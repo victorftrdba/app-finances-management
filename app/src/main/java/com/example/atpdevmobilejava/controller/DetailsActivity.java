@@ -5,7 +5,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.atpdevmobilejava.R;
@@ -15,6 +18,7 @@ import com.example.atpdevmobilejava.model.Finance;
 public class DetailsActivity extends AppCompatActivity {
     EditText nameTextView;
     EditText valueTextView;
+    Button button;
     int index;
 
     @Override
@@ -23,14 +27,28 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         nameTextView = findViewById(R.id.nameTextView);
         valueTextView = findViewById(R.id.valueTextView);
+        button = findViewById(R.id.button);
 
         Bundle extra = getIntent().getExtras();
         index = extra.getInt("index");
         if (index != -1) {
-            Finance f = DataModel.getInstance().finances.get(index);
+            Finance f = DataModel.getInstance().getFinance(index);
             nameTextView.setText(f.getName());
             valueTextView.setText(f.getValue());
+            button.setVisibility(View.VISIBLE);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goToOptionActivity(index);
+                }
+            });
         }
+    }
+
+    void goToOptionActivity (int index) {
+        Intent intent = new Intent(DetailsActivity.this, OptionsActivity.class);
+        intent.putExtra("index", index);
+        startActivity(intent);
     }
 
     @Override

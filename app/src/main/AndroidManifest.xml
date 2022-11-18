@@ -13,6 +13,13 @@
         android:theme="@style/Theme.AtpDevMobileJava"
         tools:targetApi="31">
         <activity
+            android:name=".controller.OptionsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".controller.DetailsActivity"
             android:exported="false">
             <meta-data

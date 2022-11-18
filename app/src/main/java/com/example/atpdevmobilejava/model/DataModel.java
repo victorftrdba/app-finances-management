@@ -63,6 +63,15 @@ public class DataModel {
         return false;
     }
 
+    public boolean updateStatus(Finance f, int position) {
+        int count = database.updateStatus(f);
+        if (count == 1) {
+            finances.set(position, f);
+            return true;
+        }
+        return false;
+    }
+
     public boolean removeFinance (int position) {
         int count = database.removeFinance(getFinance(position));
         if (count == 1) {

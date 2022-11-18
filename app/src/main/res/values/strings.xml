@@ -10,4 +10,9 @@
     <string name="attention_description">Um erro ocorreu durante o salvamento dos dados, preencha corretamente os campos.</string>
     <string name="remove_finance">Conta removida</string>
     <string name="undo">Desfazer</string>
+    <string name="switchOptionView">Switch</string>
+    <string name="situa_o_da_conta">Situação da conta</string>
+    <string name="paga">Paga</string>
+    <string name="em_aberto">Em aberto</string>
+    <string name="op_es">Opções</string>
 </resources>

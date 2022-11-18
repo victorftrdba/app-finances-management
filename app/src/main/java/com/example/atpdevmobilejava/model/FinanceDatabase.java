@@ -62,7 +62,7 @@ public class FinanceDatabase extends SQLiteOpenHelper {
 
     public ArrayList<Finance> getFinancesFromDB () {
         SQLiteDatabase database = getReadableDatabase();
-        Cursor cursor = database.query(DB_TABLE, null, null, null, null, null, null);
+        Cursor cursor = database.query(DB_TABLE, null, null, null, null, null, COL_ID + " DESC");
         ArrayList<Finance> finances = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
@@ -88,6 +88,16 @@ public class FinanceDatabase extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COL_NAME, f.getName());
         values.put(COL_VALUE, f.getValue());
+        values.put(COL_STATUS, f.getStatus());
+        String id = String.valueOf(f.getId());
+        SQLiteDatabase database = getWritableDatabase();
+        int count = database.update(DB_TABLE, values, COL_ID + " = ?", new String[]{id});
+        database.close();
+        return count;
+    }
+
+    public int updateStatus (Finance f) {
+        ContentValues values = new ContentValues();
         values.put(COL_STATUS, f.getStatus());
         String id = String.valueOf(f.getId());
         SQLiteDatabase database = getWritableDatabase();
