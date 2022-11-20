@@ -12,6 +12,8 @@ import com.example.atpdevmobilejava.R;
 import com.example.atpdevmobilejava.model.DataModel;
 import com.example.atpdevmobilejava.model.Finance;
 
+import java.util.Objects;
+
 public class OptionsActivity extends AppCompatActivity {
     boolean switchOptionView;
     Switch switchValue;
@@ -21,11 +23,11 @@ public class OptionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        switchValue = findViewById(R.id.switchOptionView);
         Bundle extra = getIntent().getExtras();
         index = extra.getInt("index");
         Finance f = DataModel.getInstance().getFinance(index);
-        switchValue = findViewById(R.id.switchOptionView);
-        if (f.getStatus() == "Paga") {
+        if (Objects.equals(f.getStatus(), "Paga")) {
             switchValue.setChecked(true);
         }
     }
